@@ -169,15 +169,9 @@ $(document).ready(function () {
         in uppercase, to td#upperVowels
          */
 
-        // var upperVowels = [];
-        // for(var i = 0; i < myArray.length; i++)
-        // {
-        //     if()
-        //     {
-        //         upperVowels.push(myArray[i]); 
-        //     }
-        //     $("#upperVowels").text(upperVowels);  
-        // }  
+        var upper = myArray.join().replaceAll("a", "A").replaceAll("e", "E").replaceAll("i", "I").replaceAll("o", "O").replaceAll("u", "U");
+
+        $("#upperVowels").text(upper);
 
         /*
         Output all of the strings in reverse order and separated by
