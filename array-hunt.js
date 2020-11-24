@@ -93,6 +93,11 @@ $(document).ready(function () {
         Find the first and last string in the array.
         Output them to td#firstLast
          */
+        var first = myArray [0];
+        var count = myArray.length;
+        var last = myArray[count - 1];
+
+        $("#firstLast").text(first + ", " + last);
 
 
         /*
@@ -100,11 +105,29 @@ $(document).ready(function () {
         Output it to td#firstEnn
          */
 
-
+        for(var i = 0; i < myArray.length; i++)
+        {
+            if(myArray[i].indexOf('e') != -1)
+            {
+                $("#firstEnn").text(myArray[i]);
+                break;
+            }
+        }  
+    
         /*
         Find all of the strings with less than 6 characters.
         Output them to td#lessThanSix
          */
+
+        var lessSix = [];
+        for( var i = 0; i < myArray.length; i++)
+        {
+            if(myArray[i].length < 6)
+            {
+               lessSix.push(myArray[i]);
+            }
+            $("#lessThanSix").text(lessSix);
+        }
 
 
         /*
@@ -112,25 +135,64 @@ $(document).ready(function () {
         Output it to td#longName
          */
 
+         var lgth = 0;
+         var longest;
+
+         for(var i = 0; i < myArray.length; i++)
+         {
+             if(myArray[i].length > lgth)
+             {
+                 lgth = myArray[i].length;
+                 longest = myArray[i];
+             }
+             $("#longName").text(longest);
+         }
+        
 
         /*
         Find all of the strings that do not contain the letter 's'.
         Output them to td#noEss
          */
 
+        var noEss = [];
+        for(var i = 0; i < myArray.length; i++)
+        {
+            if(myArray[i].indexOf("s") === -1)
+            {
+                noEss.push(myArray[i]); 
+            }
+            $("#noEss").text(noEss);  
+        }  
 
         /*
         Output all of the strings, but with all of their vowels
         in uppercase, to td#upperVowels
          */
 
+        // var upperVowels = [];
+        // for(var i = 0; i < myArray.length; i++)
+        // {
+        //     if()
+        //     {
+        //         upperVowels.push(myArray[i]); 
+        //     }
+        //     $("#upperVowels").text(upperVowels);  
+        // }  
 
         /*
         Output all of the strings in reverse order and separated by
         ' - ' to td#reverseDash
          */
 
+        var reverseDash = [];
+        for(var i = 0; i < myArray.length; i++)
+        {
+            if(myArray[i] !== -1)
+            {
+                reverseDash.push("-", myArray[i]); 
+            }
+            $("#reverseDash").text(reverseDash.reverse());  
+        } 
 
     }
-
 });
