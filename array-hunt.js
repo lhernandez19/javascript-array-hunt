@@ -191,7 +191,7 @@ $(document).ready(function () {
             {
                 reverseDash.push("-", myArray[i]); 
             }
-            $("#reverseDash").text(reverseDash.reverse());  
+            $("#reverseDash").text(reverseDash.reverse().join(""));  
         } 
 
     }
